@@ -1,7 +1,10 @@
-import React from 'react';
+import React from "react";
+import Posts from "./components/Posts";
 
-const App = () =>(
-  <h2>Hello, World!</h2>
-)
+const App = () => (
+  <>
+    <Posts />
+  </>
+);
 
 export default App;
