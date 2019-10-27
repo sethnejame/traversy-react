@@ -16,7 +16,7 @@ class Posts extends Component {
       <div key={post.id}>
         <h4>{post.title}</h4>
         <p>{post.body}</p>
-        <hr></hr>
+        <hr />
       </div>
     ));
     return (
