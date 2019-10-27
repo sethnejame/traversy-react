@@ -9,7 +9,6 @@ class Posts extends Component {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then(response => response.json())
       .then(data => this.setState({ posts: data }));
-    console.log(this.state.posts);
   }
 
   render() {
