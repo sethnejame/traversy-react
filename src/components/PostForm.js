@@ -7,6 +7,16 @@ class PostForm extends Component {
     return (
       <div>
         <h1>Add Post</h1>
+        <form>
+          <div className="form-group">
+            <label>Title</label>
+            <input type="text" className="form-control" />
+          </div>
+          <div className="form-group">
+            <label>Body</label>
+            <textarea type="text" className="form-control" />
+          </div>
+        </form>
       </div>
     );
   }
