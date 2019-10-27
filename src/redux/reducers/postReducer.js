@@ -1,5 +1,4 @@
 import { FETCH_POSTS, NEW_POSTS } from "../actions/types";
-import { type } from "os";
 
 const initialState = {
   items: [], // represents the posts that come in from our fetch call to jsonplaceholder
@@ -7,7 +6,7 @@ const initialState = {
 };
 
 export default function(state = initialState, action) {
-  switch ({type, payload}) {
+  switch (action.type) {
     case FETCH_POSTS:
       //TODO
       break;
