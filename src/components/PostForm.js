@@ -7,21 +7,52 @@ class PostForm extends Component {
   };
 
   onChange = e => {
-    this.setState({ [e.target.name]: e.target.value } )
-  }
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  onSubmit = e => {
+    e.preventDefault();
+
+    const post = {
+      title: this.state.title,
+      body: this.state.body
+    };
+
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(post)
+    })
+      .then(response => response.json())
+      .then(data => console.log(data));
+  };
 
   render() {
     return (
       <div>
         <h1>Add Post</h1>
-        <form>
+        <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Title</label>
-            <input type="text" className="form-control" name="title" onChange={this.onChange} value={this.state.title}/>
+            <input
+              type="text"
+              className="form-control"
+              name="title"
+              onChange={this.onChange}
+              value={this.state.title}
+            />
           </div>
           <div className="form-group">
             <label>Body</label>
-            <textarea type="text" className="form-control" name="body" onChange={this.onChange} value={this.state.body}/>
+            <textarea
+              type="text"
+              className="form-control"
+              name="body"
+              onChange={this.onChange}
+              value={this.state.body}
+            />
           </div>
           <button type="submit" className="btn btn-primary">
             Submit
