@@ -9,7 +9,6 @@ export default function(state = initialState, action) {
   switch (action.type) {
     case FETCH_POSTS:
       return { ...state, items: action.payload };
-      break;
     case NEW_POSTS:
       //TODO
       break;

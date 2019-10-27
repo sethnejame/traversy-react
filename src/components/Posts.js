@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchPosts } from "../redux/actions/postActions";
 
 class Posts extends Component {
-
   render() {
     const postItems = this.state.posts.map(post => (
       <div key={post.id}>
@@ -19,4 +20,4 @@ class Posts extends Component {
   }
 }
 
-export default Posts;
+export default connect(null, { fetchPosts })(Posts);
