@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 class Posts extends Component {
+  state = {
+    posts: []
+  }
+
   componentWillMount() {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then(response => response.json())
