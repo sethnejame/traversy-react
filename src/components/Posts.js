@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { fetchPosts } from "../actions/types";
+import { fetchPosts } from "../redux/actions/postActions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
