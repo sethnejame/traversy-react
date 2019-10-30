@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { fetchPosts } from "../actions/types";
+import { connect } from "react-redux";
 
 class Posts extends Component {
-
   componentWillMount() {
     fetchPosts();
   }
@@ -24,4 +24,7 @@ class Posts extends Component {
   }
 }
 
-export default Posts;
+export default connect(
+  null,
+  { fetchPosts }
+)(Posts);
