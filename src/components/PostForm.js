@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { createPost } from "../redux/actions/postActions";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 class PostForm extends Component {
   state = {
@@ -56,6 +57,11 @@ class PostForm extends Component {
     );
   }
 }
+
+PostForm.propTypes = {
+  createPost: PropTypes.func.isRequired,
+  post: PropTypes.object.isRequired
+};
 
 export default connect(
   null,
