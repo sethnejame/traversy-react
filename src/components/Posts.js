@@ -4,6 +4,13 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 class Posts extends Component {
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.newPost) {
+      this.props.posts.unshift(newProps.newPost);
+    }
+  }
+
   componentWillMount() {
     this.props.fetchPosts();
   }
