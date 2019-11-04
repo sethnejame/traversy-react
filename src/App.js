@@ -5,6 +5,7 @@ import PostForm from "./components/PostForm";
 const App = () => (
   <>
     <Posts />
+    <hr />
     <PostForm />
   </>
 );
