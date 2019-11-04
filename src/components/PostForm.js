@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { createPost } from "../redux/actions/postActions";
 
 class PostForm extends Component {
   state = {
@@ -14,15 +15,7 @@ class PostForm extends Component {
       body: this.state.body
     };
 
-    fetch("https://jsonplaceholder.typicode.com/posts", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json"
-      },
-      body: JSON.stringify(post)
-    })
-      .then(response => response.json())
-      .then(data => console.log(data));
+    this.props.createPost(post);
   };
 
   onChange = e => {
