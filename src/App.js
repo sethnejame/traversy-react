@@ -3,10 +3,10 @@ import Posts from "./components/Posts";
 import PostForm from "./components/PostForm";
 
 const App = () => (
-  <div className="container-fluid">
-    <Posts />
-    <hr />
+  <div className="container">
     <PostForm />
+    <hr />
+    <Posts />
   </div>
 );
 
