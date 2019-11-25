@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import fetchPosts from "../redux/actions/postActions";
+import { connect } from "react-redux";
 
 class Posts extends Component {
   state = {
@@ -7,11 +8,11 @@ class Posts extends Component {
   };
 
   componentDidMount() {
-    fetchPosts();
+    this.props.fetchPosts();
   }
 
   render() {
-    const postList = this.state.posts.map(post => (
+    const postList = this.props.posts.map(post => (
       <div key={post.id}>
         <h4>{post.title}</h4>
         <p>{post.body}</p>
@@ -27,4 +28,8 @@ class Posts extends Component {
   }
 }
 
-export default Posts;
+const mapStateToProps = state => ({
+  posts: state.posts.items
+})
+
+export default connect(mapStateToProps, { fetchPosts })(Posts);
