@@ -8,8 +8,7 @@ const initialState = {
 const postReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_POSTS:
-      //TODO
-      break;
+      return {...state, items: action.payload};
     case NEW_POST:
       //TODO
       break;
