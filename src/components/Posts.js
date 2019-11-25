@@ -3,9 +3,6 @@ import fetchPosts from "../redux/actions/postActions";
 import { connect } from "react-redux";
 
 class Posts extends Component {
-  state = {
-    posts: []
-  };
 
   componentDidMount() {
     this.props.fetchPosts();
