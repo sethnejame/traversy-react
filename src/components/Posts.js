@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import fetchPosts from "../redux/actions/postActions";
 
 class Posts extends Component {
   state = {
@@ -6,9 +7,7 @@ class Posts extends Component {
   };
 
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then(response => response.json())
-      .then(data => this.setState({ posts: data }));
+    fetchPosts();
   }
 
   render() {
